@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .heart-svg {
+    width: 500px;
+    height: 500px;
+    margin-bottom: 20px;
+  }
+  
+  /* Heart Animation */
+  #heart-path {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: draw-heart 3s ease forwards;
+  }
+  
+  #tracing-point {
+    position: absolute;
+    r: 3;
+    animation: trace-heart 3s ease forwards;
+  }
+  
+  /* Keyframes for drawing heart and tracing point */
+  @keyframes draw-heart {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes trace-heart {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(0, 0); }
+  }
+  
+  /* Name styling */
+  .name {
+    font-family: 'Arial', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff0000;
+    opacity: 0;
+  }
+  
+  /* Keyframes for showing the name */
+  @keyframes show-name {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .heart-svg {
+      width: 350px;
+      height: 350px;
+    }
+    
+    .name {
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .heart-svg {
+      width: 250px;
+      height: 250px;
+    }
+    
+    .name {
+      font-size: 20px;
+    }
+  }
+  
